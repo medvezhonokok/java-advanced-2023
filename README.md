@@ -1,22 +1,27 @@
 # Тесты к курсу «Технологии Java»
 
-[Условия домашних заданий](http://www.kgeorgiy.info/courses/java-advanced/homeworks.html)
+[Условия домашних заданий](https://www.kgeorgiy.info/courses/java-advanced/homeworks.html)
 
 
-## Домашнее задание 10. HelloUDP
+## Домашнее задание 9. HelloUDP
+
+Интерфейсы
+
+* `HelloUDPClient` должен реализовывать интерфейс
+  [HelloClient](modules/info.kgeorgiy.java.advanced.hello/info/kgeorgiy/java/advanced/hello/HelloClient.java)
+* `HelloUDPServer` должен реализовывать интерфейс
+  [HelloServer](modules/info.kgeorgiy.java.advanced.hello/info/kgeorgiy/java/advanced/hello/HelloServer.java)
 
 Тестирование
 
- * простой вариант:
-    * клиент:
-        ```info.kgeorgiy.java.advanced.hello client <полное имя класса>```
-    * сервер:
-        ```info.kgeorgiy.java.advanced.hello server <полное имя класса>```
- * сложный вариант:
-    * клиент:
-        ```info.kgeorgiy.java.advanced.hello client-i18n <полное имя класса>```
-    * сервер:
-        ```info.kgeorgiy.java.advanced.hello server-i18n <полное имя класса>```
+* простой вариант (`client` и `server`)
+* сложный вариант (`client-i18n` и `server-i18n`)
+    * на противоположной стороне находится система, дающая ответы на различных языках
+* продвинутый вариант (`client-evil` и `server-evil`)
+    * на противоположной стороне находится старая система,
+      не полностью соответствующая последней версии спецификации
+
+Тестовый модуль: [info.kgeorgiy.java.advanced.hello](artifacts/info.kgeorgiy.java.advanced.hello.jar)
 
 Исходный код тестов:
 
@@ -24,158 +29,155 @@
 * [Сервер](modules/info.kgeorgiy.java.advanced.hello/info/kgeorgiy/java/advanced/hello/HelloServerTest.java)
 
 
-## Домашнее задание 9. Web Crawler
+## Домашнее задание 8. Web Crawler
+
+Тесты используют только внутренние данные и ничего не скачивают из интернета.
+
+Тестирование
+* простой вариант (`easy`):
+  [тесты](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/EasyCrawlerTest.java)
+* сложный вариант (`hard`):
+  [тесты](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/HardCrawlerTest.java)
+* продвинутый вариант (`advanced`):
+  [интерфейс](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/AdvancedCrawler.java),
+  [тесты](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/AdvancedCrawlerTest.java)
+
+[Интерфейсы и вспомогательные классы](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/)
+
+Тестовый модуль: [info.kgeorgiy.java.advanced.crawler](artifacts/info.kgeorgiy.java.advanced.crawler.jar)
+
+
+## Домашнее задание 7. Параллельный запуск
+
+Тестирование
+* простой вариант (`scalar`):
+  [тесты](modules/info.kgeorgiy.java.advanced.mapper/info/kgeorgiy/java/advanced/mapper/ScalarMapperTest.java)
+* сложный вариант (`list`):
+  [тесты](modules/info.kgeorgiy.java.advanced.mapper/info/kgeorgiy/java/advanced/mapper/ListMapperTest.java)
+* продвинутый вариант (`advanced`):
+  [тесты](modules/info.kgeorgiy.java.advanced.mapper/info/kgeorgiy/java/advanced/mapper/AdvancedMapperTest.java)
+
+Тестовый модуль: [info.kgeorgiy.java.advanced.mapper](artifacts/info.kgeorgiy.java.advanced.mapper.jar)
+
+
+## Домашнее задание 6. Итеративный параллелизм
 
 Тестирование
 
- * простой вариант:
-    ```info.kgeorgiy.java.advanced.crawler easy <полное имя класса>```
- * сложный вариант:
-    ```info.kgeorgiy.java.advanced.crawler hard <полное имя класса>```
-
-Исходный код тестов:
-
-* [интерфейсы и вспомогательные классы](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/)
-* [простой вариант](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/CrawlerEasyTest.java)
-* [сложный вариант](modules/info.kgeorgiy.java.advanced.crawler/info/kgeorgiy/java/advanced/crawler/CrawlerHardTest.java)
-
-
-## Домашнее задание 8. Параллельный запуск
-
-Тестирование
-
- * простой вариант:
-    ```info.kgeorgiy.java.advanced.mapper scalar <ParallelMapperImpl>,<IterativeParallelism>```
- * сложный вариант:
-    ```info.kgeorgiy.java.advanced.mapper list <ParallelMapperImpl>,<IterativeParallelism>```
-
-Внимание! Между полными именами классов `ParallelMapperImpl` и `IterativeParallelism`
-должна быть запятая и не должно быть пробелов.
-
-Исходный код тестов:
-
-* [простой вариант](modules/info.kgeorgiy.java.advanced.mapper/info/kgeorgiy/java/advanced/mapper/ScalarMapperTest.java)
-* [сложный вариант](modules/info.kgeorgiy.java.advanced.mapper/info/kgeorgiy/java/advanced/mapper/ListMapperTest.java)
-
-
-## Домашнее задание 7. Итеративный параллелизм
-
-Тестирование
-
- * простой вариант:
-   ```info.kgeorgiy.java.advanced.concurrent scalar <полное имя класса>```
-
-   Класс должен реализовывать интерфейс
-   [ScalarIP](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ScalarIP.java).
-
- * сложный вариант:
-   ```info.kgeorgiy.java.advanced.concurrent list <полное имя класса>```
-
-   Класс должен реализовывать интерфейс
-   [ListIP](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ListIP.java).
-
-Исходный код тестов:
-
-* [простой вариант](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ScalarIPTest.java)
-* [сложный вариант](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ListIPTest.java)
+* простой вариант (`scalar`):
+    * Класс должен реализовывать интерфейс
+      [ScalarIP](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ScalarIP.java).
+    * [тесты](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ScalarIPTest.java)
+* сложный вариант (`list`):
+    * Класс должен реализовывать интерфейс
+      [ListIP](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ListIP.java).
+    * [тесты](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/ListIPTest.java)
+* продвинутый вариант (`advanced`):
+    * Класс должен реализовывать интерфейс
+      [AdvancedIP](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/AdvancedIP.java).
+    * [тесты](modules/info.kgeorgiy.java.advanced.concurrent/info/kgeorgiy/java/advanced/concurrent/AdvancedIPTest.java)
 
 
 ## Домашнее задание 5. JarImplementor
 
-Класс должен реализовывать интерфейс
+Класс `Implementor` должен дополнительно реализовывать интерфейс
 [JarImpler](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/JarImpler.java).
 
-Тестирование
+Скрипты, `MANIFEST.MF` и `.jar-файл` должны находиться в каталоге `scripts`
+в корне репозитория.
+Скомпилированный Javadoc должен находиться в каталоге `javadoc`
+в корне репозитория.
 
- * простой вариант:
-    ```info.kgeorgiy.java.advanced.implementor jar-interface <полное имя класса>```
- * сложный вариант:
-    ```info.kgeorgiy.java.advanced.implementor jar-class <полное имя класса>```
+В скриптах вы можете рассчитывать на то, что репозиторий курса
+лежит рядом с вашим репозиторием в каталоге `java-advanced-2023`.
 
-Исходный код тестов:
+Исходный код
 
-* [простой вариант](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/InterfaceJarImplementorTest.java)
-* [сложный вариант](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/ClassJarImplementorTest.java)
+* простой вариант (`jar-interface`):
+  [тесты](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/InterfaceJarImplementorTest.java)
+* сложный вариант (`jar-class`):
+  [тесты](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/ClassJarImplementorTest.java)
+* продвинутый вариант (`jar-advanced`):
+  [тесты](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/AdvancedJarImplementorTest.java)
+
+Тестовый модуль: [info.kgeorgiy.java.advanced.implementor](artifacts/info.kgeorgiy.java.advanced.implementor.jar)
 
 
 ## Домашнее задание 4. Implementor
 
-Класс должен реализовывать интерфейс
+Класс `Implementor` должен реализовывать интерфейс
 [Impler](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/Impler.java).
 
-Тестирование
+Исходный код
 
- * простой вариант:
-    ```info.kgeorgiy.java.advanced.implementor interface <полное имя класса>```
- * сложный вариант:
-    ```info.kgeorgiy.java.advanced.implementor class <полное имя класса>```
-
-Исходный код тестов:
-
-* [простой вариант](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java)
-* [сложный вариант](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java)
+* простой вариант (`interface`):
+  [тесты](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java)
+* сложный вариант (`class`):
+  [тесты](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java)
+* продвинутый вариант (`advanced`):
+  [тесты](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/AdvancedImplementorTest.java)
+* предварительные тесты бонусного варианта (`covariant`):
+  [тесты](modules/info.kgeorgiy.java.advanced.implementor/info/kgeorgiy/java/advanced/implementor/AdvancedImplementorTest.java)
 
 
 ## Домашнее задание 3. Студенты
 
-Тестирование
-
- * простой вариант:
-    ```info.kgeorgiy.java.advanced.student StudentQuery <полное имя класса>```
- * сложный вариант:
-    ```info.kgeorgiy.java.advanced.student StudentGroupQuery <полное имя класса>```
-
 Исходный код
 
- * простой вариант:
-    [интерфейс](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/StudentQuery.java),
-    [тесты](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/FullStudentQueryTest.java)
- * сложный вариант:
-    [интерфейс](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/StudentGroupQuery.java),
-    [тесты](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/FullStudentGroupQueryTest.java)
- * продвинутый вариант:
-    [интерфейс](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/AdvancedStudentGroupQuery.java),
-    [тесты](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/AdvancedStudentGroupQueryTest.java)
+* простой вариант (`StudentQuery`):
+  [интерфейс](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/StudentQuery.java),
+  [тесты](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/StudentQueryTest.java)
+* сложный вариант (`GroupQuery`):
+  [интерфейс](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/GroupQuery.java),
+  [тесты](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/GroupQueryTest.java)
+* продвинутый вариант (`AdvancedQuery`):
+  [интерфейс](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/AdvancedQuery.java),
+  [тесты](modules/info.kgeorgiy.java.advanced.student/info/kgeorgiy/java/advanced/student/AdvancedQueryTest.java)
+
+Тестовый модуль: [info.kgeorgiy.java.advanced.student](artifacts/info.kgeorgiy.java.advanced.student.jar)
 
 
 ## Домашнее задание 2. ArraySortedSet
 
-Тестирование
+Исходный код
 
- * простой вариант:
-    ```info.kgeorgiy.java.advanced.arrayset SortedSet <полное имя класса>```
- * сложный вариант:
-    ```info.kgeorgiy.java.advanced.arrayset NavigableSet <полное имя класса>```
+* простой вариант (`SortedSet`):
+  [тесты](modules/info.kgeorgiy.java.advanced.arrayset/info/kgeorgiy/java/advanced/arrayset/SortedSetTest.java)
+* сложный вариант (`NavigableSet`):
+  [тесты](modules/info.kgeorgiy.java.advanced.arrayset/info/kgeorgiy/java/advanced/arrayset/NavigableSetTest.java)
+* продвинутый вариант (`AdvancedSet`):
+  [тесты](modules/info.kgeorgiy.java.advanced.arrayset/info/kgeorgiy/java/advanced/arrayset/AdvancedSetTest.java)
 
-Исходный код тестов:
-
- * [простой вариант](modules/info.kgeorgiy.java.advanced.arrayset/info/kgeorgiy/java/advanced/arrayset/SortedSetTest.java)
- * [сложный вариант](modules/info.kgeorgiy.java.advanced.arrayset/info/kgeorgiy/java/advanced/arrayset/NavigableSetTest.java)
+Тестовый модуль: [info.kgeorgiy.java.advanced.arrayset](artifacts/info.kgeorgiy.java.advanced.arrayset.jar)
 
 
 ## Домашнее задание 1. Обход файлов
 
+Исходный код
+
+* простой вариант (`Walk`):
+  [тесты](modules/info.kgeorgiy.java.advanced.walk/info/kgeorgiy/java/advanced/walk/WalkTest.java)
+* сложный вариант (`RecursiveWalk`):
+  [тесты](modules/info.kgeorgiy.java.advanced.walk/info/kgeorgiy/java/advanced/walk/RecursiveWalkTest.java)
+* продвинутый вариант (`AdvancedWalk`):
+  должны проходить тесты от простого и сложного вариантов
+
+Тестовый модуль: [info.kgeorgiy.java.advanced.walk](artifacts/info.kgeorgiy.java.advanced.walk.jar)
+
 Для того, чтобы протестировать программу:
 
- * Скачайте
+* Скачайте
     * тесты
-        * [info.kgeorgiy.java.advanced.base.jar](artifacts/info.kgeorgiy.java.advanced.base.jar)
-        * [info.kgeorgiy.java.advanced.walk.jar](artifacts/info.kgeorgiy.java.advanced.walk.jar)
-    * и библиотеки к ним:
-        * [junit-4.11.jar](lib/junit-4.11.jar)
-        * [hamcrest-core-1.3.jar](lib/hamcrest-core-1.3.jar)
- * Откомпилируйте решение домашнего задания
- * Протестируйте домашнее задание
+        * [базовый модуль](artifacts/info.kgeorgiy.java.advanced.base.jar)
+        * [тестовый модуль](artifacts/info.kgeorgiy.java.advanced.walk.jar) (свой для каждого ДЗ)
+    * [библиотеки](lib)
+* Откомпилируйте решение домашнего задания
+* Протестируйте домашнее задание
     * Текущая директория должна:
-       * содержать все скачанные `.jar` файлы;
-       * содержать скомпилированное решение;
-       * __не__ содержать скомпилированные самостоятельно тесты.
-    * простой вариант:
-        ```java -cp . -p . -m info.kgeorgiy.java.advanced.walk Walk <полное имя класса>```
-    * сложный вариант:
-        ```java -cp . -p . -m info.kgeorgiy.java.advanced.walk RecursiveWalk <полное имя класса>```
-
-Исходный код тестов:
-
- * [простой вариант](modules/info.kgeorgiy.java.advanced.walk/info/kgeorgiy/java/advanced/walk/WalkTest.java)
- * [сложный вариант](modules/info.kgeorgiy.java.advanced.walk/info/kgeorgiy/java/advanced/walk/RecursiveWalkTest.java)
+        * содержать все скачанные `.jar` файлы;
+        * содержать скомпилированное решение;
+        * __не__ содержать скомпилированные самостоятельно тесты.
+    * Запустите тесты:
+      `java -cp . -p . -m <тестовый модуль> <вариант> <полное имя класса>`
+    * Пример для простого варианта ДЗ-1:
+      `java -cp . -p . -m info.kgeorgiy.java.advanced.walk Walk <полное имя класса>`
